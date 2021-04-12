@@ -11,5 +11,5 @@ jobs:
   include:
     - script: echo $VERSION
       arch: amd64
-    - script echo $VERSION
+    - script: echo $VERSION
       arch: ppc64le

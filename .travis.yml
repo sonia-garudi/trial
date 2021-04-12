@@ -1,5 +1,12 @@
 arch: ppc64le
 
-script:
-  - echo "abc"
-  - arch
+env:
+  global:
+    - VERSION=4.5
+    - VERSION=4.6
+    - VERSION=4.7
+
+jobs:
+  include:
+   - stage: Build x86_64 image
+     script: echo $VERSION

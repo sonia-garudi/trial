@@ -1,10 +1,9 @@
 arch: ppc64le
 
 env:
-  global:
-    - VERSION=4.5
-    - VERSION=4.6
-    - VERSION=4.7
+- VERSION=4.5
+- VERSION=4.6
+- VERSION=4.7
 
 jobs:
   include:

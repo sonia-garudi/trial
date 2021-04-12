@@ -8,7 +8,6 @@ env:
 - VERSION=4.7
 
 jobs:
-  include:
     - script: echo $VERSION
       arch: amd64
     - script: echo $VERSION

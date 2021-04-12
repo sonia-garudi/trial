@@ -7,8 +7,25 @@ env:
 - VERSION=4.6
 - VERSION=4.7
 
+arch:
+- amd64
+- ppc64le
+
+script: echo $VERSION
+deploy:
+ - provider: script
+   script: echo $TRAVIS_TAG
+   skip_cleanup: true
+   on:
+     tags: true
+
 jobs:
-    - script: echo $VERSION
-      arch: amd64
-    - script: echo $VERSION
-      arch: ppc64le
+ include:
+  stage: Final Stage
+  script: echo "Final Stage"
+  deploy:
+       - provider: script
+         script: echo $TRAVIS_TAG
+         skip_cleanup: true
+         on:
+           tags: true

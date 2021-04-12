@@ -11,10 +11,10 @@ arch:
 - amd64
 - ppc64le
 
-script: echo $VERSION
+script: echo $VERSION arch
 deploy:
  - provider: script
-   script: echo $TRAVIS_TAG
+   script: echo $TRAVIS_TAG arch
    skip_cleanup: true
    on:
      tags: true

@@ -7,5 +7,4 @@ env:
 
 jobs:
   include:
-   - stage: Build x86_64 image
-     script: echo $VERSION
+   - script: echo $VERSION

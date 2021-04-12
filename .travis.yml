@@ -11,4 +11,6 @@ arch:
 - amd64
 - ppc64le
 
-script: echo $VERSION
+jobs:
+  include:
+    - script: echo $VERSION

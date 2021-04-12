@@ -2,20 +2,13 @@ os: linux
 dist: bionic
 language: bash
 
-stages:
- - test
-
 env:
 - VERSION=4.5
 - VERSION=4.6
 - VERSION=4.7
 
-jobs:
-   - stage: Build x86_64 image
-     arch: amd64
-     script:
-      - echo $VERSION
-   - stage: Build ppc64le image
-     arch: ppc64le
-     script:
-      - echo $VERSION
+arch:
+- amd64
+- ppc64le
+
+script: echo $VERSION

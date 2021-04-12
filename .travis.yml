@@ -7,10 +7,9 @@ env:
 - VERSION=4.6
 - VERSION=4.7
 
-arch:
-- amd64
-- ppc64le
-
 jobs:
   include:
     - script: echo $VERSION
+      arch: amd64
+    - script echo $VERSION
+      arch: ppc64le

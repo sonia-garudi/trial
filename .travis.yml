@@ -1,4 +1,6 @@
-arch: ppc64le
+os: linux
+dist: bionic
+language: bash
 
 env:
 - VERSION=4.5
@@ -7,4 +9,11 @@ env:
 
 jobs:
   include:
-   - script: echo $VERSION
+   - stage: Build x86_64 image
+     arch: amd64
+     script:
+      - echo $VERSION
+   - stage: Build ppc64le image
+     arch: ppc64le
+     script:
+      - echo $VERSION

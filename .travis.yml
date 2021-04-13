@@ -7,9 +7,6 @@ env:
 - VERSION=4.6
 - VERSION=4.7
 
-env:
-- status=0
-
 arch:
 - amd64
 - ppc64le
@@ -22,7 +19,7 @@ deploy:
    - export status_$TRAVIS_CPU_ARCH=$?
    skip_cleanup: true
 
-if status == 0 :
+after_success :
   script: echo "Final Stage"  
   deploy:
        - provider: script

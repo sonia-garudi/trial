@@ -18,6 +18,8 @@ deploy:
    - echo $TRAVIS_TAG $TRAVIS_CPU_ARCH
    - export status_$TRAVIS_CPU_ARCH=$?
    skip_cleanup: true
+   on:
+     tags: true
 
 after_success :
   - echo "Final Stage"  

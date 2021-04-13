@@ -20,5 +20,5 @@ deploy:
    skip_cleanup: true
 
 after_success :
-  script: echo "Final Stage"  
-  script: echo $TRAVIS_TAG
+  - echo "Final Stage"  
+  - echo $TRAVIS_CPU_ARCH

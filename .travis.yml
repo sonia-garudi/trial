@@ -2,6 +2,8 @@ os: linux
 dist: bionic
 language: bash
 
+branches: all
+
 env:
 - VERSION=4.5
 - VERSION=4.6

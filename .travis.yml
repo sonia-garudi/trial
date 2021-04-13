@@ -15,5 +15,10 @@ script: echo $VERSION $TRAVIS_CPU_ARCH
 deploy:
  - provider: script
    script: 
-   - echo $TRAVIS_TAG $TRAVIS_CPU_ARCH && exit 1
+   - echo $TRAVIS_TAG $TRAVIS_CPU_ARCH
    skip_cleanup: true
+
+after_success:
+  - echo "in after success for $TRAVIS_CPU_ARCH"
+  on:
+    tags: true

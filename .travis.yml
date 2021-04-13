@@ -20,5 +20,3 @@ deploy:
 
 after_success:
   - echo "in after success for $TRAVIS_CPU_ARCH"
-  on:
-    tags: true

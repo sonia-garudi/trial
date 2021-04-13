@@ -18,7 +18,3 @@ deploy:
    - echo $TRAVIS_TAG $TRAVIS_CPU_ARCH
    - exit 1
    skip_cleanup: true
-
-after_success :
-  - echo "Final Stage"  
-  - echo $TRAVIS_CPU_ARCH

@@ -14,15 +14,15 @@ arch:
 script: echo $VERSION $TRAVIS_CPU_ARCH
 deploy:
  - provider: script
-   script: echo $TRAVIS_TAG arch
+   script: 
+   - echo $TRAVIS_TAG $TRAVIS_CPU_ARCH
+   - export status_$TRAVIS_CPU_ARCH=$?
    skip_cleanup: true
    on:
      tags: true
 
-jobs:
- include:
-  stage: Final Stage
-  script: echo "Final Stage"
+if status_$TRAVIS_CPU_ARCH == 0 :
+  script: echo "Final Stage"  
   deploy:
        - provider: script
          script: echo $TRAVIS_TAG

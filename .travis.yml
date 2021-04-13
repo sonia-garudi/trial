@@ -15,7 +15,7 @@ script: echo $VERSION $TRAVIS_CPU_ARCH
 deploy:
  - provider: script
    script: 
-   - echo $TRAVIS_TAG $TRAVIS_CPU_ARCH
+   - echo $TRAVIS_CPU_ARCH
    skip_cleanup: true
 
 after_success:

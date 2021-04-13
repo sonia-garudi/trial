@@ -21,9 +21,4 @@ deploy:
 
 after_success :
   script: echo "Final Stage"  
-  deploy:
-       - provider: script
-         script: echo $TRAVIS_TAG
-         skip_cleanup: true
-         on:
-           tags: true
+  script: echo $TRAVIS_TAG

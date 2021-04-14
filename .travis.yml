@@ -1,22 +1,13 @@
 os: linux
 dist: bionic
-language: bash
+language: python
 
 env:
-- VERSION=4.5
-- VERSION=4.6
-- VERSION=4.7
-
-arch:
-- amd64
-- ppc64le
-
-script: echo $VERSION $TRAVIS_CPU_ARCH
-deploy:
- - provider: script
-   script: 
-   - echo $TRAVIS_CPU_ARCH
-   skip_cleanup: true
-
-after_success:
-  - echo "in after success for $TRAVIS_CPU_ARCH"
+  - PEP=true
+  - PEP=false
+matrix:
+  allow_failures:
+    - env: PEP=true
+script:
+  - if $PEP ; then echo $PEP ; fi
+  - echo "second line"
